@@ -28,7 +28,7 @@ Then proceed with the following section.
 Existing SilverStripe web-site
 ------------------------------------
 
-1) Create a Docker container. This step is supposed to be made only when you start your web-site for a first time (you can use different container names for different projects):
+1) Create a Docker container. This step is supposed to be made only when you start your web-site for a first time. You can use different container names for different projects:
 
 ```bash
 cd path/to/your/existing/silverstripe/project
