@@ -20,7 +20,7 @@ To begin a new project:
 ```bash
 mkdir new_project
 cd new_project
-run -v `pwd`:/var/www dyatlov/silverstripe new.sh
+docker run -v `pwd`:/var/www dyatlov/silverstripe new.sh
 ```
 
 Then proceed with the following section.
