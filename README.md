@@ -34,12 +34,12 @@ Existing SilverStripe web-site
 
 ```bash
 cd path/to/your/existing/silverstripe/project
-docker create --name my_silverstripe_website -p 3000:80 -v `pwd`:/var/lib/mysql dyatlov/silverstripe start.sh
+docker create --name my_website -p 3000:80 -v `pwd`:/var/lib/mysql dyatlov/silverstripe start.sh
 ```
 1. Start the Docker container:
 
 ```bash
-docker start my_silverstripe_website
+docker start my_website
 ```
 
 1. Access your web-site. If you are running Docker on a Linux machine, simply open [http://localhost:3000](http://localhost:3000) in your borwser. If you are using [Docker Toolbox](https://www.docker.com/toolbox) (Mac/Windows machine), run the following command in your Docker terminal: 
@@ -53,7 +53,7 @@ It will show you an IP address of your Docker virtual machine. Past it to the br
 1. Stop the Docker container
 
 ```bash
-docker stop my_silverstripe_website
+docker stop my_website
 ```
 
 This Docker image is heabily based on [sminnee/docker-silverstripe-lamp](https://github.com/sminnee/docker-silverstripe-lamp)
