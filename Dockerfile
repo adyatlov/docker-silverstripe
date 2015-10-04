@@ -30,16 +30,16 @@ RUN wget https://phar.phpunit.de/phpunit-3.7.37.phar && \
 	pear channel-discover pear.phing.info && \
 	pear install phing/phing
 
-# Update composer
+# Update Composer
 RUN /usr/local/bin/composer self-update
 
 # SilverStripe Apache Configuration
 RUN a2enmod rewrite && \
 	rm /var/www/index.html && \
-	echo "date.timezone = Pacific/Auckland" > /etc/php5/conf.d/timezone.ini
+	echo "date.timezone = Europe/Berlin" > /etc/php5/conf.d/timezone.ini
 
 ADD start.sh /usr/local/bin/start.sh
-ADD install.sh /usr/local/bin/install.sh
+ADD new.sh /usr/local/bin/new.sh
 ADD apache-default-vhost /etc/apache2/sites-available/default
 ADD _ss_environment.php /var/_ss_environment.php
 

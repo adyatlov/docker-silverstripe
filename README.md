@@ -16,7 +16,7 @@ If you don't have Docker on your machine, install it following the instructions 
 New project
 -----------
 
-To begin a new project run
+To begin a new project:
 
     mkdir new_project
     cd new_project
@@ -27,7 +27,8 @@ Then proceed with the following section.
 Existing SilverStripe web-site
 ------------------------------------
 
-1. Create a Docker container. This step supposed to be made only when you start your web-site for a first time (you can use different container names for different projects):
+1. Create a Docker container. This step is supposed to be made only when you start your web-site for a first time (you can use different container names for different projects):
+
     cd cd path/to/your/existing/silverstripe/project
     docker create --name my_silverstripe_website -p 3000:80 -v `pwd`:/var/lib/mysql dyatlov/silverstripe start.sh
 
@@ -40,6 +41,7 @@ Existing SilverStripe web-site
 It will show you an IP address of your Docker virtual machine. Past it to the browser and postfix it with the port number: http://192.168.99.100:3000
 
 4. Stop the Docker container
+
     docker stop my_silverstripe_website
 
 This Docker image is heabily based on [sminnee/docker-silverstripe-lamp](https://github.com/sminnee/docker-silverstripe-lamp)
