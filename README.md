@@ -1,5 +1,5 @@
 ===================================================================
-[dyatlov/silverstripe](https://hub.docker.com/r/dyatlov/mesos-dev/)
+[SilverStripe Docker image dyatlov/silverstripe](https://hub.docker.com/r/dyatlov/mesos-dev/)
 ===================================================================
 
 This is the source of a Docker image to install and run SilverStripe.
@@ -55,5 +55,7 @@ It will show you an IP address of your Docker virtual machine. Past it to the br
 ```bash
 docker stop my_website
 ```
+Credits
+=======
 
 This Docker image is heabily based on [sminnee/docker-silverstripe-lamp](https://github.com/sminnee/docker-silverstripe-lamp)
