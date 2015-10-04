@@ -1,51 +1,44 @@
-[sminnee/silverstripe-lamp](https://registry.hub.docker.com/u/sminnee/silverstripe-lamp/)
-=========================
-Docker image
-------------
+===================================================================
+[dyatlov/silverstripe](https://hub.docker.com/r/dyatlov/mesos-dev/)
+===================================================================
 
-This is the source of a Docker image that you can use to do a number of SilverStripe-related things:
-
- * Run a LAMP stack suitable for SilverStripe (including an internal database)
- * Uses Debian Wheezy with Backports
- * Run SilverStripe tests
- * Run SilverStripe release-packaging steps
-
-A number of support tools are available:
-
-  * PHPUnit (PHP)
-  * Phing (PHP)
-  * Composer (PHP)
-  * NodeJS (JavaScript)
-  * NPM (JavaScript)
-  * Grunt (JavaScript)
-  * Gulp (JavaScript)
-  * RubyGems (Ruby)
-  * Bundler (Ruby)
-  * Compass (Ruby)
-
-To help with headless download of packages, it has the github.com SSH key loaded as a known host.
-
-Usage
------
-
-To run a build comment, mount your SilverStrpe root as `/var/www` and execute commands there:
-
-    build_dir=`pwd`
-    docker run -v $build_dir:/var/www sminnee/silverstripe-lamp bash -c 'composer install; phpunit'
-
-To run a working instance of your SilverStripe code on a fresh database, run the image without
-a command. In this example, we have mapped port 3000 to the HTTP port of the container.
-
-    build_dir=`pwd`
-    docker run -dP -p 3000:80 -v $build_dir:/var/www sminnee/silverstripe-lamp
-
+This is the source of a Docker image to install and run SilverStripe:
 **Note:** This is for development purposes only; the root database user has no password.
 
-Development
+Usage
+=====
+
+Install Docker
+--------------
+
+If you don't have Docker on your machine, install it following the instructions on the Docker's  [https://docs.docker.com/installation/](Supported installation page).
+
+New project
 -----------
 
-To rebuild this image locally, use the Makefile included:
+To begin a new project run
 
-    git clone https://github.com/sminnee/docker-silverstripe-lamp.git
-    cd docker-silverstripe-lamp
-    make
+    mkdir new_project
+    cd new_project
+    run -v `pwd`:/var/www dyatlov/silverstripe new.sh
+
+Then proceed with the following section.
+
+Existing SilverStripe web-site
+------------------------------------
+
+1. Create a Docker container. This step supposed to be made only when you start your web-site for a first time (you can use different container names for different projects):
+    cd cd path/to/your/existing/silverstripe/project
+    docker create --name my_silverstripe_website -p 3000:80 -v `pwd`:/var/lib/mysql dyatlov/silverstripe start.sh
+
+2. Start the Docker container:
+    docker start my_silverstripe_website
+
+3. Access your web-site. If you are running Docker on a Linux machine, simply open [http://localhost:3000](http://localhost:3000) in your borwser. If you are using [Docker Toolbox](https://www.docker.com/toolbox) (Mac/Windows machine), run the following command in your Docker terminal: 
+    docker-machine ip default
+It will show you an IP address of your Docker virtual machine. Past it to the browser and postfix it with the port number: http://192.168.99.100:3000
+
+4. Stop the Docker container
+    docker stop my_silverstripe_website
+
+This Docker image is heabily based on 
