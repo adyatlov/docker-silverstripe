@@ -2,7 +2,8 @@
 [dyatlov/silverstripe](https://hub.docker.com/r/dyatlov/mesos-dev/)
 ===================================================================
 
-This is the source of a Docker image to install and run SilverStripe:
+This is the source of a Docker image to install and run SilverStripe.
+
 **Note:** This is for development purposes only; the root database user has no password.
 
 Usage
