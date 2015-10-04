@@ -46,7 +46,7 @@ docker start my_website
 docker-machine ip default
 ```
 
-It will show you an IP address of your Docker virtual machine. Past it to the browser and postfix it with the port number: http://192.168.99.100:3000
+It will show you an IP address of your Docker virtual machine. Past it to the browser and postfix it with the 3000 port: http://192.168.99.100:3000
 
 4) Stop the Docker container
 
