@@ -1,4 +1,4 @@
-#[SilverStripe Docker image dyatlov/silverstripe](https://hub.docker.com/r/dyatlov/silverstipe/)
+#[SilverStripe Docker image dyatlov/silverstripe](https://hub.docker.com/r/dyatlov/silverstripe/)
 
 This is the source of a Docker image to install and run [SilverStripe](http://www.silverstripe.org/).
 
