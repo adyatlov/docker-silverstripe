@@ -1,6 +1,6 @@
 #[SilverStripe CMS Dockerfile dyatlov/silverstripe](https://hub.docker.com/r/dyatlov/silverstripe/)
 
-This is the source of a Docker image to install and run [SilverStripe CMS](http://www.silverstripe.org/).
+This is a Dockerfile of a Docker image to install and run [SilverStripe CMS](http://www.silverstripe.org/).
 
 **Note:** This is for development purposes only; the root database user has no password.
 
