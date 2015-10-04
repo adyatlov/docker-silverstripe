@@ -58,4 +58,4 @@ docker stop my_website
 Credits
 =======
 
-This Docker image is heabily based on [sminnee/docker-silverstripe-lamp](https://github.com/sminnee/docker-silverstripe-lamp)
+This Docker image is heavily based on [sminnee/docker-silverstripe-lamp](https://github.com/sminnee/docker-silverstripe-lamp)
