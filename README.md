@@ -28,19 +28,19 @@ Then proceed with the following section.
 Existing SilverStripe web-site
 ------------------------------------
 
-1. Create a Docker container. This step is supposed to be made only when you start your web-site for a first time (you can use different container names for different projects):
+1) Create a Docker container. This step is supposed to be made only when you start your web-site for a first time (you can use different container names for different projects):
 
 ```bash
 cd path/to/your/existing/silverstripe/project
 docker create --name my_website -p 3000:80 -v `pwd`:/var/lib/mysql dyatlov/silverstripe start.sh
 ```
-1. Start the Docker container:
+2) Start the Docker container:
 
 ```bash
 docker start my_website
 ```
 
-1. Access your web-site. If you are running Docker on a Linux machine, simply open [http://localhost:3000](http://localhost:3000) in your borwser. If you are using [Docker Toolbox](https://www.docker.com/toolbox) (Mac/Windows machine), run the following command in your Docker terminal: 
+3) Access your web-site. If you are running Docker on a Linux machine, simply open [http://localhost:3000](http://localhost:3000) in your borwser. If you are using [Docker Toolbox](https://www.docker.com/toolbox) (Mac/Windows machine), run the following command in your Docker terminal: 
 
 ```bash
 docker-machine ip default
