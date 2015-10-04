@@ -1,4 +1,4 @@
-#[SilverStripe Docker image dyatlov/silverstripe](https://hub.docker.com/r/dyatlov/mesos-dev/)
+#[SilverStripe Docker image dyatlov/silverstripe](https://hub.docker.com/r/dyatlov/silverstipe/)
 
 This is the source of a Docker image to install and run [SilverStripe](http://www.silverstripe.org/).
 
