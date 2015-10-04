@@ -32,7 +32,7 @@ Existing SilverStripe web-site
 
 ```bash
 cd path/to/your/existing/silverstripe/project
-docker create --name my_website -p 3000:80 -v `pwd`:/var/lib/mysql dyatlov/silverstripe start.sh
+docker create --name my_website -p 3000:80 -v `pwd`:/var/www dyatlov/silverstripe start.sh
 ```
 2) Start the Docker container:
 
