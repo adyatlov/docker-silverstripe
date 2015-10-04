@@ -1,5 +1,5 @@
 FROM debian:wheezy
-MAINTAINER Sam Minnee <sam@silverstripe.com>
+MAINTAINER Andrey Dyatlov <adyatlov@gmail.com>
 
 ### SET UP
 
@@ -30,38 +30,23 @@ RUN wget https://phar.phpunit.de/phpunit-3.7.37.phar && \
 	pear channel-discover pear.phing.info && \
 	pear install phing/phing
 
+# Update composer
+RUN /usr/local/bin/composer self-update
+
 # SilverStripe Apache Configuration
 RUN a2enmod rewrite && \
 	rm /var/www/index.html && \
 	echo "date.timezone = Pacific/Auckland" > /etc/php5/conf.d/timezone.ini
 
-ADD apache-foreground /usr/local/bin/apache-foreground
+ADD start.sh /usr/local/bin/start.sh
+ADD install.sh /usr/local/bin/install.sh
 ADD apache-default-vhost /etc/apache2/sites-available/default
 ADD _ss_environment.php /var/_ss_environment.php
-
-####
-## These are not specifically SilverStripe related and could be removed on a more optimised image
-
-# Ruby, RubyGems, Bundler
-RUN apt-get -qqy install -t stable ruby ruby-dev && \
-	gem install bundler && \
-	gem install compass
-
-# NodeJS
-# A bit of mucking about to get it running without TTY
-RUN apt-get -qqy install nodejs-legacy && \
-	curl --insecure https://www.npmjs.org/install.sh > /tmp/npm-install.sh && \
-	chmod +x /tmp/npm-install.sh && \
-	clean=yes /tmp/npm-install.sh && \
-	rm /tmp/npm-install.sh && \
-	npm install -g grunt-cli gulp bower
 
 ####
 ## Commands and ports	
 EXPOSE 80
 
-# Run apache in foreground mode, because Docker needs a foreground
 WORKDIR /var/www
-CMD ["/usr/local/bin/apache-foreground"]
 
 ENV LANG en_US.UTF-8
