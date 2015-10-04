@@ -11,7 +11,7 @@ Usage
 Install Docker
 --------------
 
-If you don't have Docker on your machine, install it following the instructions on the Docker's  [https://docs.docker.com/installation/](Supported installation page).
+If you don't have Docker on your machine, install it following the instructions on the Docker's  [Supported installation page](https://docs.docker.com/installation/).
 
 New project
 -----------
