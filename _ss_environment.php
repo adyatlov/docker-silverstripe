@@ -20,3 +20,7 @@ define('SS_DEFAULT_ADMIN_PASSWORD', 'password');
 
 global $_FILE_TO_URL_MAPPING;
 $_FILE_TO_URL_MAPPING['/var/www'] = 'http://localhost';
+
+// This causes errors to be written to the BASE_PATH/silverstripe.log file.
+// Path must be relative to BASE_PATH
+define('SS_ERROR_LOG', 'silverstripe.log');

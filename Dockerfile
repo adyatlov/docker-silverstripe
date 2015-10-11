@@ -39,13 +39,17 @@ RUN a2enmod rewrite && \
 	echo "date.timezone = Europe/Berlin" > /etc/php5/conf.d/timezone.ini
 
 ADD start.sh /usr/local/bin/start.sh
+ADD save_db.sh /usr/local/bin/save_db.sh
+ADD load_db.sh /usr/local/bin/load_db.sh
 ADD new.sh /usr/local/bin/new.sh
 ADD apache-default-vhost /etc/apache2/sites-available/default
 ADD _ss_environment.php /var/_ss_environment.php
+ADD php.ini /etc/php5/apache2/php.ini
 
 ####
 ## Commands and ports	
 EXPOSE 80
+EXPOSE 3306
 
 WORKDIR /var/www
 
