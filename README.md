@@ -60,6 +60,21 @@ password: password
 ```bash
 docker stop my_website
 ```
+DB Tools
+========
+
+- Save db to silverstripe_dump.sql
+
+```bash
+docker exec my_website save_db.sh
+```
+
+- Load db from silverstripe_dump.sql
+
+```bash
+docker exec my_website load_db.sh
+```
+
 Credits
 =======
 
