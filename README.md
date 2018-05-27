@@ -1,4 +1,4 @@
-#[SilverStripe CMS Dockerfile dyatlov/silverstripe](https://hub.docker.com/r/dyatlov/silverstripe/)
+# [SilverStripe CMS Dockerfile dyatlov/silverstripe](https://hub.docker.com/r/dyatlov/silverstripe/)
 
 This is a Dockerfile of a Docker image to install and run [SilverStripe CMS](http://www.silverstripe.org/).
 
